@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="layout" inherit_id="website.layout">
+        <xpath expr="//div[@id='wrapwrap']" position="after">
+            <t t-if="website and website.has_umami_analytics and website.umami_analytics_host">
+                <script 
+                    defer="defer"
+                    t-att-data-website-id="website.umami_analytics_id"
+                    t-att-src="website.umami_analytics_host"
+                />
+           </t>
+        </xpath>
+    </template>
+
+</odoo>
